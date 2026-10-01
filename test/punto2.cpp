@@ -42,6 +42,7 @@ const char pagina_template[] PROGMEM = R"rawliteral(
 <head>
   <meta charset='utf-8'>
   <title>Servidor Web ESP32</title>
+  <meta http-equiv="refresh" content="1">
   <style>
     body { background-color: black; text-align: center; font-family: Arial, sans-serif; color: white; }
     .teclado { width: 120px; height: 45px; background-color: rojo; color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; margin: 10px; }

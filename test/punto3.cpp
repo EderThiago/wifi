@@ -142,7 +142,10 @@ void setup() {
     server.sendHeader("Location", "/");
     server.send(302, "text/plain", "");
   });
-  
+}
+void loop(){
+    server.handleClient();
+
   while(estado==1){
     for(int i=0;i<3;i++){
         digitalWrite(led[i],semaforo[1][i]);
