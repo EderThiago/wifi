@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Servidor Web ESP32</title>
+  <style>
+    body { background-color: black; text-align: center; font-family: Arial, sans-serif; color: white; }
+    .teclado { width: 120px; height: 45px; background-color: rojo; color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; margin: 10px; }
+    .num { width: 120px; height: 45px; background-color: rgb(245, 9, 9); color: black; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; margin: 10px; }
+    .d1 { width: 120px; height: 45px; background-color: rgb(38, 0, 255); color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; margin: 10px; }
+    .d2 { width: 120px; height: 45px; background-color: rgb(0, 255, 42); color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; margin: 10px; }
+    button:hover { opacity: 0.8; }
+    .centrado{display: flex;
+    justify-content: center;}
+  </style>
+</head>
+<body>
+
+  <h1 class='titulo'>CONTROL DE DISPLAYS</h1>
+
+<div class="centrado">
+  <table border="0">
+        <thead>
+            <tr>
+                <td ><p><a href='/toggled1'><button class='d1'>ANIMACIÓN 1</button></a></p></td>
+                <td ><p><a href='/toggled2'><button class='d2'>ANIMACIÓN 2</button></a></p></td>
+            </tr>
+        </thead>
+        
+    </table>
+</div>
+
+<div class="centrado">
+   <table border="0">
+        
+        <tbody>
+            <tr>
+                <td><p><a href='/toggle1'><button class='num'>1</button></a></p></td>
+                <td><p><a href='/toggle2'><button class='num'>2</button></a></p></td>
+                <td><p><a href='/toggle3'><button class='num'>3</button></a></p></td>
+               
+            </tr>
+            <tr>
+                <td><p><a href='/toggle4'><button class='num'>4</button></a></p></td>
+                <td><p><a href='/toggle5'><button class='num'>5</button></a></p></td>
+                <td><p><a href='/toggle6'><button class='num'>6</button></a></p></td>
+               
+            </tr>
+            <tr>
+                <td><p><a href='/toggle7'><button class='num'>7</button></a></p></td>
+                <td><p><a href='/toggle8'><button class='num'>8</button></a></p></td>
+                <td><p><a href='/toggle9'><button class='num'>9</button></a></p></td>
+               
+            </tr>
+            <tr>
+                <td></td>
+                <td><p><a href='/toggle0'><button class='num'>0</button></a></p></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+  
+</body>
+</html>

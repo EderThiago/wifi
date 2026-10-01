@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Servidor Web ESP32</title>
+  <style>
+    body { background-color: rgb(247, 244, 244); text-align: center; font-family: Arial, sans-serif; color: white; }
+    .lento { width: 200px; height: 200px; background-color: rgb(245, 9, 9); color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; margin: 10px; }
+    .emergencia { width: 200px; height: 200px; background-color: rgb(255, 81, 0); color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; margin: 10px; }
+    .rapido { width: 200px; height: 200px; background-color: rgb(0, 255, 42); color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; margin: 10px; }
+    .normal { width: 200px; height: 200px; background-color: rgb(251, 255, 0); color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; margin: 10px; }
+
+    button:hover { opacity: 0.8; }
+    .centrado{display: flex;
+    justify-content: center;}
+  </style>
+</head>
+<body>
+
+  <h1 class='titulo' style="font-size:45px; color: black; font-family: 'Impact', sans-serif; "><u>SEMÁFORO</u></h1>
+
+<div class="centrado">
+  <table border="0">
+        <tbody>
+            <tr>
+                <td ><p><a href='/lento'><button class='lento'>LENTO</button></a></p></td>
+            </tr>
+            <tr>
+                <td ><p><a href='/normal'><button class='normal'>NORMAL</button></a></p></td>
+            </tr>
+            <tr>
+                <td ><p><a href='/rapido'><button class='rapido'>RÁPIDO</button></a></p></td>
+            </tr>
+            <tr>
+                <td ><p><a href='/emergencia'><button class='emergencia'>EMERGENCIA</button></a></p></td>
+
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
+
+
+  
+</body>
+</html>
