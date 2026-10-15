@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Control LED</title>
+  <style>
+    body { background-color: #ecf0f1; text-align: center; padding-top: 50px; }
+    .centrado{display: flex;
+    justify-content: center;}
+    .titulo { font-family: 'Courier', monospace; font-weight: bold; font-style: italic; font-size: 32px; color: darkblue; }
+    .boton { width: 180px; height: 60px; color: black; border: 1px solid black; border-radius: 15px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px;}
+  </style>
+</head>
+<body>
+  <h1 class='titulo'>CONTROL DE VENTILADOR</h1>
+  <span><a href='/toggle'><button class='boton'><b>__XXXX__</b></span>
+    <br>
+    <br>
+    <br> 
+  <div class="centrado">
+  <table border="0">
+        <tbody>
+            <tr>
+                <td ><p><a href='/apagado'><button class="boton" style="background-color:red;">APAGADO</button></a></p></td>
+            </tr>
+            <tr>
+                <td ><p><a href='/low'><button class="boton" style="background-color: lightblue;">LOW</button></a></p></td>
+            </tr>
+            <tr>
+                <td ><p><a href='/medium'>  <button class="boton" style="background-color:green;">MEDIUM</button></a></p></td>
+            </tr>
+            <tr>
+                <td ><p><a href='/high'>  <button class="boton" style="background-color:orange;">HIGH</button>
+</a></p></td>
+
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
+  
+  
+  
+  
+</body>
+</html>

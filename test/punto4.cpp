@@ -12,7 +12,7 @@ int estado=0;
 int accion=2;
 String boton= "ENCENDER";
 float tension=0;
-String tensionCambio;
+String tensionCambio="X.XX";
 
 
 
@@ -49,7 +49,7 @@ const char pagina_template[] PROGMEM = R"rawliteral(
   <div class="borde">
   <div class="pantalla">
     <br>
-    <p><strong>X.XX</strong>V</p>
+    <p><strong>Tension: __VALOR_TENSION__ V</strong>V</p>
 
 </div>
 </div>
@@ -96,7 +96,7 @@ void setup() {
   server.on("/", []() {
     String pagina = pagina_template;
     pagina.replace("_TEXTO_", boton);
-    pagina.replace("X.XX", tensionCambio);
+    pagina.replace("__VALOR_TENSION__", tensionCambio);
     server.send(200, "text/html", pagina);
   });
    server.on("/led", []() {
@@ -122,7 +122,7 @@ void setup() {
   
 }
 void loop(){
-tension=analogRead(pot);
+tension=map(analogRead(pot),0,1023,0,255);
 tensionCambio=tension;
 if(accion==0){
     digitalWrite(led,LOW);
