@@ -3,12 +3,15 @@
 #include <ESPAsyncWebServer.h>
 
 
-const char* ssid = "EL_NOMBRE_DE_TU_WIFI";
-const char* password = "LA_CONTRASENA_DE_TU_WIFI";
+const char* ssid = "CESJT";
+const char* password = "itisjtsmg";
 
 
-const int monitor=4;
-int luz;
+const int monitor=32;
+String fondo;
+float luz;
+String luzstring;
+int valorpin;
 
 
 // Servidor Asíncrono 
@@ -23,23 +26,27 @@ const char pagina_template[] PROGMEM = R"rawliteral(
 <html>
 <head>
   <meta charset='utf-8'>
+  <meta http-equiv="refresh" content="1">
   <title>Control LED</title>
   <style>
-    body { background-color: red; text-align: center; padding-top: 50px; }
+    body { background-color: __FONDO__; text-align: center; padding-top: 50px; }
     .titulo { font-family: 'Courier', monospace; font-weight: bold; font-style: italic; font-size: 32px; color: white; }
     .boton { width: 120px; height: 60px; background-color: yellow; color: black; border: 2px solid black; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px;}
+    .lectura{border: 3px dotted rgb(250, 248, 248); border-radius: 20px; padding: 25px;}
   </style>
 </head>
 <body>
-  <h1 class='titulo' style="font-family: "Segoe UI">MONITOR DE LUZ AMBIENTAL</h1>
-  <p><a href='/toggle'><button class='boton'>__BOTON_TEXTO__</button></a></p>
+  <h1 class='titulo' style="font-family: 'Segoe UI'">MONITOR DE LUZ AMBIENTAL</h1>
+  <div class="lectura">
+    <span>Nivel de Luz: <span style="font-size:40px"><b>XXX%</b></span></span>
+  </div>
 </body>
 </html>
 )rawliteral";
 
 void setup() {
   Serial.begin(115200);
-  pinMode(ledPin, OUTPUT);
+  pinMode(monitor, INPUT);
   Serial.print("Conectando a ");
   Serial.println(ssid);
   WiFi.begin(ssid, password);
@@ -66,29 +73,34 @@ void setup() {
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
     String pagina = pagina_template; //hago una variable para no modificar a la original
     //parte para cambiar lo que dice el boton una vez que se prende o apaga
-    String textoBoton;
-    if (ledEncendido == true)  textoBoton = "ON";
-    else textoBoton = "OFF";
+    
     //pagina.replace busca el texto y lo reemplaza con lo que pongas. 
-    pagina.replace("__BOTON_TEXTO__", textoBoton);
+    
+    pagina.replace("__FONDO__", fondo);
+    pagina.replace("XXX%", luzstring);
     
     request->send(200, "text/html", pagina);
   });
 
-  server.on("/toggle", HTTP_GET, [](AsyncWebServerRequest *request) {
-    digitalWrite(ledPin,ledEncendido);
-    ledEncendido = !ledEncendido;
-    request->redirect("/"); //lo mando a la ruta (/)
-  });
 
   // Iniciar servidor
   server.begin();
 }
 
 void loop() {
-  // Ya no necesitamos server.handleClient(). El servidor asíncrono
-  // maneja las peticiones en segundo plano por su cuenta.
-  // El loop ahora se dedica 100% a las tareas de hardware.
+valorpin=analogRead(monitor);
+luz=(valorpin*100)/4095;
+
+luzstring=luz;
+if(luz<(33)){
+    fondo="blue";
+}
+if((luz>=33)&&(luz<=(66))){
+    fondo="orange";
+}
+if(luz>66){
+    fondo="yellow";
+}
 
 
 }
