@@ -85,28 +85,34 @@ void setup() {
 
   server.on("/toggleRojo", []() {
     color=1;
+    pagina.replace("XXX", "ROJO");
+
     server.sendHeader("Location", "/");
     server.send(302, "text/plain", "");
   });
 
   server.on("/toggleVerde", []() {
+    pagina.replace("XXX", "VERDE");
     color=2;
     server.sendHeader("Location", "/");
     server.send(302, "text/plain", "");
   });
   server.on("/toggleAzul", []() {
     color=3;
+    pagina.replace("XXX", "AZUL");
     server.sendHeader("Location", "/");
     server.send(302, "text/plain", "");
   });
   server.on("/toggleBlanco", []() {
     color=4;
+    pagina.replace("XXX", "BLANCO");
     server.sendHeader("Location", "/");
     server.send(302, "text/plain", "");
   });
 
   server.on("/toggleApagado", []() {
    color=0;
+   pagina.replace("XXX", "APAGADO");
     server.sendHeader("Location", "/");
     server.send(302, "text/plain", "");
   });
