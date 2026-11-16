@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Servidor Web ESP32</title>
+  <style>
+    body { background-color: #ecf0f1; text-align: center; font-family: Arial, sans-serif; color: _LETRA_; }
+    .panel_temp { width: 550px; padding:30px; border-radius: 20px ; justify-content: center;  margin: 0 auto}
+    .centrado{ display:flex; justify-content: center;}
+  </style>
+</head>
+
+<body>
+  <h1 class='titulo' style="font-family:Arial-black; font: size 34px;">SISTEMA DE REFRIGERACIÓN</h1>
+
+ 
+  <div class="panel_temp">
+  <p >MODO ACTUAL: XXXX</p>
+  <p>TEMPERATURA OBJETIVO: YYYY</p>
+  <p>“ESTADO DEL VENTILADOR: ZZZZ”</p>
+  </div>
+ 
+  
+  <p><a href='/detenido'><button class='panel_temp' >DETENIDO</button></a></p>
+  <p><a href='/ventilacion'><button class='panel_temp' >VENTILACIÓN</button></a></p>
+  <p><a href='/intensivo'><button class='panel_temp' >INTENSIVO</button></a></p>
+ 
+</body>
+</html>

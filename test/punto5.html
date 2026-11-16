@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Servidor Web ESP32</title>
+  <style>
+    body { background-color: black; text-align: center; font-family: Arial, sans-serif; color: white; }
+    .est_nota { width:400px; height:80px; border: 2px dashed #000; text-align: center; }
+    .centrado{ display:flex; justify-content: center; }
+    .btn-color{width: 60px; height: 150px;}
+  </style>
+</head>
+
+<body>
+  <h1 class='titulo' style="font-family:verdana;">GENERADOR DE TONOS</h1>
+
+  <span>Color Actual: XXX</span>
+  <div>
+  <p>Tocando: XXX</p>
+  </div>
+  
+  <div class='centrado'>
+  <p><a href='/toggleDo'><button class='btn-color' >DO</button></a></p>
+  <p><a href='/toggleRe'><button class='btn-color' >RE</button></a></p>
+  <p><a href='/toggleMi'><button class='btn-color' >MI</button></a></p>
+  <p><a href='/toggleLa'><button class='btn-color' >LA</button></a></p>
+  <p><a href='/toggleSol'><button class='btn-color' >SOL</button></a></p>
+  <p><a href='/toggleApagar'><button class='btn-color' style="background-color: red;">SILENCIO</button></a></p>
+  </div>
+</body>
+</html>
