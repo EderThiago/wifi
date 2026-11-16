@@ -32,7 +32,7 @@ const char pagina_template[] PROGMEM = R"rawliteral(
   <title>Servidor Web ESP32</title>
   <style>
     body { background-color: #ecf0f1; text-align: center; font-family: Arial, sans-serif; color: _LETRA_; }
-    .panel_temp { width: 550px; padding:30px; border-radius: 20px ; justify-content: center;  margin: 0 auto}
+    .panel_temp { width: 550px; padding:30px; border-radius: 20px ; justify-content: center;  margin: 0 auto; background-color:_COLOR_;}
     .centrado{ display:flex; justify-content: center;}
   </style>
 </head>
